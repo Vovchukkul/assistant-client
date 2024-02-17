@@ -20,7 +20,9 @@ export const Header = () => {
           <Link to="/login">
             <button type="button" className="login">Вхід</button>
           </Link>
-          <button type="button" className="registration">Реєстрація</button>
+          <Link to="/registration">
+            <button type="button" className="registration">Реєстрація</button>
+          </Link>
         </div>
       </div>
       <div className="header__middle">
