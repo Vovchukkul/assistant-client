@@ -3,8 +3,21 @@ import logo from '../../images/HyperTech.svg';
 import { About } from '../../components/About';
 import { Link } from 'react-router-dom';
 import { AnotherFooter } from '../../components/AnotherFooter';
+import { SetStateAction, useState } from 'react';
+import ukraine_flag from '../../images/icons/ukraine-flag.svg';
 
 export const RegisterPage = () => {
+  const [countryCode, setCountryCode] = useState('+380'); // Default country code for Ukraine
+  const [phoneNumber, setPhoneNumber] = useState('');
+
+  const handleCountryCodeChange = (e: { target: { value: SetStateAction<string>; }; }) => {
+    setCountryCode(e.target.value);
+  };
+
+  const handlePhoneNumberChange = (e: { target: { value: SetStateAction<string>; }; }) => {
+    setPhoneNumber(e.target.value);
+  };
+
   return (
     <div className="register-wrap">
       <div className="register_top-bar">
@@ -49,12 +62,23 @@ export const RegisterPage = () => {
                   placeholder="Ім'я"
                   type='text'
                 />
-                <input 
-                  className="input_tel input"
-                  name='tel'
-                  placeholder='+380'
-                  type='number'
-                />
+                <fieldset className='fieldset'>
+                  <legend className='legend'>Телефон</legend>
+                  <div className="select_wrap">
+                    <div className='select'>
+                      <div className='option'>
+                        <img src={ukraine_flag} alt="ukraine" />
+                        +380
+                      </div>
+                    </div>
+                    <input
+                      type="tel"
+                      value={phoneNumber}
+                      onChange={handlePhoneNumberChange}
+                      className='tel_input'
+                    />
+                  </div>
+                </fieldset>
                 <input
                   className="input_password input"
                   type='password'
@@ -74,9 +98,11 @@ export const RegisterPage = () => {
                 конфіденційності</span>
               </p>
               <div className="button_wrap">
-                <button type="submit" className="form_button">
-                  Продовжити
-                </button>
+                <Link to="/profile">
+                  <button type="submit" className="form_button">
+                    Продовжити
+                  </button>
+                </Link>
               </div>
               <div className="form_bottom">
                 Уже є акаунт? <Link to="/login" className='form_bottom-link'>Увійти</Link>

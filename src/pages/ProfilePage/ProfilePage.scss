@@ -3,14 +3,14 @@
   width: 142px;
 }
 
-.register__contact {
+.profile__contact {
   display: flex;
   align-items: center;
   gap: 4px;
   font-family: 'Montserrat', sans-serif;
 }
 
-.register__tel-icon {
+.profile__tel-icon {
   background-image: url(../../images/icons/iconoir_smartphone-device.svg);
   background-repeat: no-repeat;
   background-size: contain;
@@ -19,13 +19,13 @@
   width: 24px;
 }
 
-.register__number {
+.profile__number {
   font-size: 14px;
   font-weight: 600;
   color: rgba(255, 255, 255, 1);
 }
 
-.register_top-bar {
+.profile_top-bar {
   background: linear-gradient(180deg,#1C323F 0%, #1E3441 100%);
   border-bottom-right-radius: 50px;
   border-bottom-left-radius: 50px;
@@ -40,7 +40,7 @@
   margin-bottom: 30px;
 }
 
-.register_main_wrap {
+.profile_main_wrap {
   padding-inline: 60px;
   margin-bottom: 37px;
 
@@ -48,7 +48,7 @@
   justify-content: center;
 }
 
-.register_main {
+.profile_main {
   background-color: rgba(235, 241, 245, 1);
   border-radius: 35px;
   max-width: 1335px;
@@ -62,6 +62,8 @@
   justify-content: space-between;
   gap: 198px;
 
+  width: 1335px;
+  height: 812px;
   box-sizing: border-box;
 }
 
@@ -94,7 +96,7 @@
   margin-bottom: 41px;
 }
 
-.register_form {
+.profile_form {
   background: rgba(255, 255, 255, 1);
   box-shadow: 0px 4px 16px 0px rgba(31, 59, 75, 0.15);
   border-radius: 35px;
@@ -122,6 +124,11 @@
 }
 
 .input_name {
+  border: 1px solid rgba(198, 209, 215, 1);
+  border-radius: 10px;
+}
+
+.input_tel {
   border: 1px solid rgba(198, 209, 215, 1);
   border-radius: 10px;
 }
@@ -201,50 +208,10 @@
   color: rgba(0, 0, 0, 1);
 }
 
-.fieldset {
-  border: 1px solid rgba(198, 209, 215, 1);
-  border-radius: 10px;
-  padding-left: 16px;
-  padding-top: 6px;
-  padding-bottom: 7px;
-  margin-left: -1px;
-}
-
-.legend {
-  margin-left: 40px;
-  font-size: 16px;
-  font-weight: 600;
-  color: rgba(81, 88, 92, 1);
-  font-family: 'Montserrat', sans-serif;
-}
-
-.option {
-  font-size: 16px;
-  font-weight: 600;
-  color: rgba(81, 88, 92, 1);
-  font-family: 'Montserrat', sans-serif;
-
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.select_wrap {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 5px;
-}
-
-.select {
-  border: none;
-}
-
-.tel_input {
-  border: none;
-  font-size: 16px;
-  font-weight: 600;
-  color: rgba(81, 88, 92, 1);
-  font-family: 'Montserrat', sans-serif;
-  outline: none;
+.img {
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 4px 16px 0px rgba(31, 59, 75, 0.15);
+  width: 406px;
+  height: 614px;
+  border-radius: 35px;
 }

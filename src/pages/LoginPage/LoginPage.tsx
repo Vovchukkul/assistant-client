@@ -3,8 +3,21 @@ import logo from '../../images/HyperTech.svg';
 import { About } from '../../components/About';
 import { AnotherFooter } from '../../components/AnotherFooter';
 import { Link } from 'react-router-dom';
+import { SetStateAction, useState } from 'react';
+import ukraine_flag from '../../images/icons/ukraine-flag.svg';
 
 export const LoginPage = () => {
+  const [countryCode, setCountryCode] = useState('+380'); // Default country code for Ukraine
+  const [phoneNumber, setPhoneNumber] = useState('');
+
+  const handleCountryCodeChange = (e: { target: { value: SetStateAction<string>; }; }) => {
+    setCountryCode(e.target.value);
+  };
+
+  const handlePhoneNumberChange = (e: { target: { value: SetStateAction<string>; }; }) => {
+    setPhoneNumber(e.target.value);
+  };
+
   return (
     <div className="login-wrap">
       <div className="login_top-bar">
@@ -43,12 +56,23 @@ export const LoginPage = () => {
                 Вхід виконавця
               </p>
               <div className="inputs">
-                <input 
-                  className="input_tel input"
-                  name='tel'
-                  placeholder='+380'
-                  type='number'
-                />
+                <fieldset className='fieldset'>
+                  <legend className='legend'>Телефон</legend>
+                  <div className="select_wrap">
+                    <div className='select'>
+                      <div className='option'>
+                        <img src={ukraine_flag} alt="ukraine" />
+                        +380
+                      </div>
+                    </div>
+                    <input
+                      type="tel"
+                      value={phoneNumber}
+                      onChange={handlePhoneNumberChange}
+                      className='tel_input'
+                    />
+                  </div>
+                </fieldset>
                 <input
                   className="input_password input"
                   type='password'
