@@ -1,0 +1,21 @@
+.pricelist {
+  display: flex;
+  flex-direction: column;
+  gap: 47px;
+  align-items: flex-start;
+
+  width: 1316px;
+}
+
+.pricelist_title {
+  font-size: 32px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 1);
+  font-family: 'Unbounded', sans-serif;
+}
+
+.pricelist_main {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+}
