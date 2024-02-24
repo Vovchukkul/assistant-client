@@ -6,6 +6,7 @@ import { TopDropdown } from '../../components/TopDropdown';
 import { useState } from 'react';
 import { Dashboard } from '../../components/Dashboard';
 import { Pricelist } from '../../components/Pricelist';
+import { ProfileInfo } from '../../components/PersonalInfo';
 
 export const ProfilePage = () => {
   const [activeItem, setActiveItem] = useState<number | null>(0);
@@ -41,6 +42,7 @@ export const ProfilePage = () => {
       </nav>
       <div className="profile_main_wrap">
         {activeItem === 0 && <Dashboard />}
+        {activeItem === 1 && <ProfileInfo />}
         {activeItem === 2 && <Pricelist />}
       </div>
       <div className="profile_footer">

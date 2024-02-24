@@ -9,7 +9,7 @@ export const Header = () => {
       <div className="top-bar">
         <div className="top-bar__contact">
           <div className="top-bar__tel-icon"></div>
-          <div className="top-bar__number">+380 63 431 23 44</div>
+          <a href='tel: 380634312344' className="top-bar__number">+380 63 431 23 44</a>
         </div>
         <img 
           src={logo}

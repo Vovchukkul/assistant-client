@@ -1,12 +1,21 @@
 import { useState } from 'react';
-import './Filter.scss'; // Assuming Filter.scss is in the same directory
-import Dropdown from './Dropdown'; // Removed curly braces assuming Dropdown is default exported
+import './Filter.scss';
+import Dropdown from './Dropdown';
 import plane from '../images/icons/paper-plane.svg';
 
 export const Filter = () => {
   const options = [
     { label: 'Option 1', value: 'option1' },
     { label: 'Option 2', value: 'option2' },
+    { label: 'Option 3', value: 'option3' },
+    { label: 'Option 3', value: 'option3' },
+    { label: 'Option 3', value: 'option3' },
+    { label: 'Option 3', value: 'option3' },
+    { label: 'Option 3', value: 'option3' },
+    { label: 'Option 3', value: 'option3' },
+    { label: 'Option 3', value: 'option3' },
+    { label: 'Option 3', value: 'option3' },
+    { label: 'Option 3', value: 'option3' },
     { label: 'Option 3', value: 'option3' },
   ];
 
@@ -37,7 +46,7 @@ export const Filter = () => {
         />
       </div>
       <button className="search">
-        <img 
+        <img
           src={plane}
           alt="plane"
           className='plane'

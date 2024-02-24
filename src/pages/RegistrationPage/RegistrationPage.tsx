@@ -24,7 +24,7 @@ export const RegisterPage = () => {
         <img src={logo} alt="logo" className='logo' />
         <div className="register__contact">
           <div className="register__tel-icon"></div>
-          <div className="register__number">+380 63 431 23 44</div>
+          <a href='tel: 380634312344' className="register__number">+380 63 431 23 44</a>
         </div>
       </div>
       <div className="register_main_wrap">

@@ -34,7 +34,7 @@ const Dropdown: React.FC<Props> = ({ options, selectedOption, onSelect, droptext
     <>
       <div className="dropdown">
         <fieldset style={fieldsetStyles}>
-          <legend className="legend">{legend}</legend>
+          <legend className="legend_f">{legend}</legend>
           <div className="dropdown-content">
             <button onClick={() => setIsOpen(!isOpen)} className="dropdown-toggle">
               {selectedOption ? selectedOption : droptext}
@@ -48,7 +48,11 @@ const Dropdown: React.FC<Props> = ({ options, selectedOption, onSelect, droptext
             {isOpen && (
               <ul className="dropdown-menu">
                 {options.map((option) => (
-                  <li key={option.value} onClick={() => handleOptionClick(option.value)}>
+                  <li 
+                    key={option.value} 
+                    onClick={() => handleOptionClick(option.value)}
+                    className="option_first"
+                  >
                     {option.label}
                   </li>
                 ))}

@@ -24,7 +24,7 @@ export const LoginPage = () => {
         <img src={logo} alt="logo" className='logo' />
         <div className="login__contact">
           <div className="login__tel-icon"></div>
-          <div className="login__number">+380 63 431 23 44</div>
+          <a href='tel: 380634312344' className="login__number">+380 63 431 23 44</a>
         </div>
       </div>
       <div className="login_main_wrap">

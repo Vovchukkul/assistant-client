@@ -40,6 +40,8 @@
 }
 
 .dropdown-menu {
+  padding: 0;
+  margin: 0;
   position: absolute;
   width: 200px;
   border-radius: 4px;
@@ -48,12 +50,28 @@
   background-color: rgba(255, 255, 255, 1);
   list-style: none;
   margin-top: -3px;
+  height: 284px;
+  overflow: scroll;
+  scrollbar-width: 1px;
 }
 
 .fieldset {
   padding: 0;
 }
 
-.legend {
+.legend_f {
   margin-left: 10px;
+  font-size: 14px;
+  font-weight: 400;
+  color: rgba(17, 34, 17, 1);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.option_first {
+  margin: 0;
+  padding: 0;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

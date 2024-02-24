@@ -5,7 +5,6 @@
 
 .profile-wrap {
   background-color: rgba(250, 251, 252, 1);
-  // height: 100vh;
 }
 
 .profile__contact {
@@ -59,8 +58,8 @@
 }
 
 .profile_footer {
-  position: absolute;
-  bottom: 0;
+  position: sticky;
+  top: 100vh;
   width: 100%;
 }
 
