@@ -31,6 +31,27 @@
   width: 24px;
 
   cursor: pointer;
+
+  &:hover {
+    box-shadow: gray 1px 1px;
+    border-radius: 20px;
+  }
+}
+
+.icon_cancel {
+  background-image: url(../images/icons/eidt-cancel.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: block;
+  height: 24px;
+  width: 24px;
+
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: gray 1px 1px;
+    border-radius: 20px;
+  }
 }
 
 .basic_info_top {
@@ -328,4 +349,60 @@
 .link_to_setupe {
   color: rgba(244, 119, 13, 1);
   text-decoration: underline;
+}
+
+.basic_info_form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.basic_elements {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(93, 113, 124, 1);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.input {
+  border: 1.5px solid rgba(198, 209, 215, 1);
+  border-radius: 10px;
+  height: 40px;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(93, 113, 124, 1);
+  font-family: 'Montserrat', sans-serif;
+}
+
+.submit_buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.type_button {
+  height: 63px;
+  width: 192px;
+  border-radius: 15px;
+  font-size: 20px;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 1);
+  font-family: 'Montserrat', sans-serif;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.cancel_button {
+  border: none;
+  background: rgba(244, 119, 13, 0.2);
+}
+
+.save_button {
+  background: rgba(255, 255, 255, 1);
+  border: 2px solid rgba(0, 0, 0, 1);
+  box-shadow: 0px 4px 16px 0px rgba(31, 59, 75, 0.15);
 }

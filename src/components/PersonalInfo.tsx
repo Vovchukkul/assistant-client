@@ -1,12 +1,83 @@
 import { Link } from 'react-router-dom';
 import './PersonalInfo.scss';
+import { useState } from 'react';
 
 export const ProfileInfo = () => {
   const array_of_specialities = ['Наявність інструментів', 'Наявність майстерні', 'Наявність автомобіля', 'Фізична особа-підприємець', 'Терміновий виїзд', 'Надаю гарантію', 'Наявність договору', 'Без авансу за роботу', 'Працюю з командою', 'Без авансу за матеріали'];
-  
+  const [isEditingBasicInfo, setIsEditingBasicInfo] = useState(false);
+  const [basicInfoFormData, setBasicInfoFormData] = useState({
+    name: '- не заповнено -',
+    surname: '- не заповнено -',
+    city: '- не заповнено -',
+    dataOfBirth: '- не заповнено -',
+    middleName: '- не заповнено -',
+  });
+  const [isEditingAdditionalContacts, setIsEditingAdditionalContacts] = useState(false);
+  const [additionalContactsFormData, setAdditionalContactsFormData] = useState({
+    phone: '- не заповнено -',
+    email: '- не заповнено -',
+  });
+  const [isEditingAboutYourself, setIsEditingAboutYourself] = useState(false);
+  const [aboutYourselfFormData, setAboutYourselfFormData] = useState({
+    professionAndExperience: '- не заповнено -',
+    aboutMe: '- не заповнено -',
+  });
+
+  const toggleBasicInfoEditing = () => {
+    setIsEditingBasicInfo(!isEditingBasicInfo);
+  };
+
+  const toggleAdditionalContactsEditing = () => {
+    setIsEditingAdditionalContacts(!isEditingAdditionalContacts);
+  };
+
+  const toggleAboutYourselfEditing = () => {
+    setIsEditingAboutYourself(!isEditingAboutYourself);
+  };
+
+  const handleBasicInfoInputChange = (e: { target: { name: any; value: any; }; }) => {
+    const { name, value } = e.target;
+    setBasicInfoFormData({
+      ...basicInfoFormData,
+      [name]: value
+    });
+  };
+
+  const handleAdditionalContactsInputChange = (e: { target: { name: any; value: any; }; }) => {
+    const { name, value } = e.target;
+    setAdditionalContactsFormData({
+      ...additionalContactsFormData,
+      [name]: value
+    });
+  };
+
+  const handleAboutYourselfInputChange = (e: { target: { name: any; value: any; }; }) => {
+    const { name, value } = e.target;
+    setAboutYourselfFormData({
+      ...aboutYourselfFormData,
+      [name]: value
+    });
+  };
+
+  const handleBasicInfoSubmit = (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+    setIsEditingBasicInfo(false);
+  };
+
+  const handleAdditionalContactsSubmit = (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+    setIsEditingAdditionalContacts(false);
+  };
+
+  const handleAboutYourselfSubmit = (e: { preventDefault: () => void; }) => {
+    e.preventDefault();
+    setIsEditingAboutYourself(false);
+  };
+
   const getIndexOfItem = (item: string) => {
     return array_of_specialities.indexOf(item);
-  }
+  };
+
   
   return (
     <div className="profile_info">
@@ -16,16 +87,84 @@ export const ProfileInfo = () => {
           <div className="basic_info">
             <div className="basic_info_top">
               <p className="basic_info_title">Загальна інформація</p>
-              <div className="icon_edit" />
+              {!isEditingBasicInfo
+                ? (<div className="icon_edit" onClick={toggleBasicInfoEditing} />)
+                : (<div className="icon_cancel" onClick={toggleBasicInfoEditing} />)
+              }
             </div>
             <div className="basic_info_bottom">
-              <ul className="basic_info_list">
-                <li className="basic_info_items">Прізвище: - не заповнено -</li>
-                <li className="basic_info_items">Ім'я: *Тут писатиметься, що вказано під час реєстрації*</li>
-                <li className="basic_info_items">По-батькові: - не заповнено -</li>
-                <li className="basic_info_items">Дата народження: - не заповнено -</li>
-                <li className="basic_info_items">Місто: - не заповнено -</li>
-              </ul>
+              {!isEditingBasicInfo
+                ? (
+                  <ul className="basic_info_list">
+                    <li className="basic_info_items">Прізвище: {basicInfoFormData.surname}</li>
+                    <li className="basic_info_items">Ім'я: {basicInfoFormData.name}</li>
+                    <li className="basic_info_items">По-батькові: {basicInfoFormData.middleName}</li>
+                    <li className="basic_info_items">Дата народження: {basicInfoFormData.dataOfBirth}</li>
+                    <li className="basic_info_items">Місто: {basicInfoFormData.city}</li>
+                  </ul>
+                ) : (
+                  <form className='basic_info_form' onSubmit={handleBasicInfoSubmit}>
+                    <div className="basic_elements">
+                      <label htmlFor="surname">Прізвище</label>
+                      <input 
+                        type="text" 
+                        name='surname' 
+                        id='surname' 
+                        className='input'
+                        value={basicInfoFormData.surname}
+                        onChange={handleBasicInfoInputChange}
+                      />
+                    </div>
+                    <div className="basic_elements">
+                      <label htmlFor="name">Ім'я</label>
+                      <input 
+                        type="text" 
+                        name='name' 
+                        id='name'
+                        className='input' 
+                        value={basicInfoFormData.name}
+                        onChange={handleBasicInfoInputChange}
+                      />
+                    </div>
+                    <div className="basic_elements">
+                      <label htmlFor="middle_name">По батькові</label>
+                      <input 
+                        type="text" 
+                        name='middleName' 
+                        id='middle_name' 
+                        className='input' 
+                        value={basicInfoFormData.middleName}
+                        onChange={handleBasicInfoInputChange}
+                      />
+                    </div>
+                    <div className="basic_elements">
+                      <label htmlFor="birthday">День народження</label>
+                      <input 
+                        type="date" 
+                        name='dataOfBirth' 
+                        id='birthday' 
+                        className='input' 
+                        value={basicInfoFormData.dataOfBirth}
+                        onChange={handleBasicInfoInputChange}
+                      />
+                    </div>
+                    <div className="basic_elements">
+                      <label htmlFor="city">Місто</label>
+                      <input 
+                        type="text" 
+                        name='city' 
+                        id='city' 
+                        className='input' 
+                        value={basicInfoFormData.city}
+                        onChange={handleBasicInfoInputChange}
+                      />
+                    </div>
+                    <div className="submit_buttons">
+                      <button className="cancel_button type_button" onClick={toggleBasicInfoEditing}>Скасувати</button>
+                      <button type='submit' className="save_button type_button">Зберегти</button>
+                    </div>
+                  </form>
+                )}
             </div>
           </div>
           <div className="photo">
@@ -41,22 +180,85 @@ export const ProfileInfo = () => {
           <div className="additional_contacts">
             <div className="additional_contacts_top">
               <p className="additional_contacts_title">Додаткові контакти</p>
-              <div className="icon_edit" />
+              <div className="icon_edit" onClick={toggleAdditionalContactsEditing} />
             </div>
-            <ul className="additional_contacts_list">
-              <li className="additional_contacts_item"><span className="gray">Телефон:</span> - не заповнено -</li>
-              <li className="additional_contacts_item"><span className="gray">Ел. пошта:</span> - не заповнено -</li>
-            </ul>
+            {!isEditingAdditionalContacts
+              ? (
+                <ul className="additional_contacts_list">
+                  <li className="additional_contacts_item"><span className="gray">Телефон:</span> {additionalContactsFormData.phone}</li>
+                  <li className="additional_contacts_item"><span className="gray">Ел. пошта:</span> {additionalContactsFormData.email}</li>
+                </ul>
+              ) : (
+                <form className='additional_contacts_form' onSubmit={handleAdditionalContactsSubmit}>
+                  <div className="basic_elements">
+                    <label htmlFor="phone">Телефон</label>
+                    <input 
+                      type="text" 
+                      name='phone' 
+                      id='phone' 
+                      className='input'
+                      value={additionalContactsFormData.phone}
+                      onChange={handleAdditionalContactsInputChange}
+                    />
+                  </div>
+                  <div className="basic_elements">
+                    <label htmlFor="email">Email</label>
+                    <input 
+                      type="email" 
+                      name='email' 
+                      id='email'
+                      className='input' 
+                      value={additionalContactsFormData.email}
+                      onChange={handleAdditionalContactsInputChange}
+                    />
+                  </div>
+                  <div className="submit_buttons">
+                      <button className="cancel_button type_button" onClick={toggleAdditionalContactsEditing}>Скасувати</button>
+                      <button type='submit' className="save_button type_button">Зберегти</button>
+                    </div>
+                </form>
+              )}
           </div>
           <div className="about_yourself">
             <div className="about_yourself_top">
               <p className="about_yourself_title">Інформація про себе</p>
-              <div className="icon_edit" />
+              <div className="icon_edit" onClick={toggleAboutYourselfEditing} />
             </div>
-            <ul className="about_yourself_list">
-              <li className="about_yourself_item"><span className="gray">Професія та досвід:</span> - не заповнено -</li>
-              <li className="about_yourself_item"><span className="gray">Про мене:</span> - не заповнено -</li>
-            </ul>
+            {!isEditingAboutYourself
+              ? (
+                <ul className="about_yourself_list">
+                  <li className="about_yourself_item"><span className="gray">Професія та досвід:</span> {aboutYourselfFormData.professionAndExperience}</li>
+                  <li className="about_yourself_item"><span className="gray">Про мене:</span> {aboutYourselfFormData.aboutMe}</li>
+                </ul>
+              ) : (
+                <form className='about_yourself_form' onSubmit={handleAboutYourselfSubmit}>
+                  <div className="basic_elements">
+                    <label htmlFor="experience">Професія та досвід</label>
+                    <input 
+                      type="text" 
+                      name='professionAndExperience' 
+                      id='experience' 
+                      className='input'
+                      value={aboutYourselfFormData.professionAndExperience}
+                      onChange={handleAboutYourselfInputChange}
+                    />
+                  </div>
+                  <div className="basic_elements">
+                    <label htmlFor="aboutMe">Про мене</label>
+                    <textarea
+                      name='aboutMe' 
+                      id='aboutMe'
+                      className='input' 
+                      value={aboutYourselfFormData.aboutMe}
+                      onChange={handleAboutYourselfInputChange}
+                    />
+                  </div>
+                  <div className="submit_buttons">
+                      <button className="cancel_button type_button" onClick={toggleAboutYourselfEditing}>Скасувати</button>
+                      <button type='submit' className="save_button type_button">Зберегти</button>
+                    </div>
+                </form>
+              )}
           </div>
           <div className="speciality_info">
             <div className="speciality_info_top">
