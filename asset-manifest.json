@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/assistant-client/static/css/main.b0c97608.css",
-    "main.js": "/assistant-client/static/js/main.3b633068.js",
+    "main.css": "/assistant-client/static/css/main.628f3b0e.css",
+    "main.js": "/assistant-client/static/js/main.bea7b6d6.js",
     "static/media/loading.svg": "/assistant-client/static/media/loading.597925e69669b663d9045ca1153836ec.svg",
     "static/media/HyperTech.svg": "/assistant-client/static/media/HyperTech.2229c982dda64c546b610f22263e6113.svg",
     "static/media/ukraine-flag.svg": "/assistant-client/static/media/ukraine-flag.8869b95cd8e1dc7a5f7c9334ac6ca70e.svg",
@@ -16,14 +16,15 @@
     "static/media/iconoir_smartphone-device.svg": "/assistant-client/static/media/iconoir_smartphone-device.9f05de0845b5310bcc12.svg",
     "index.html": "/assistant-client/index.html",
     "static/media/akar-icons_facebook-fill.svg": "/assistant-client/static/media/akar-icons_facebook-fill.8d132d8b2e89b78b64cc.svg",
+    "static/media/eidt-cancel.svg": "/assistant-client/static/media/eidt-cancel.cb8bd2b010fc802a1467.svg",
     "static/media/chevron_up.svg": "/assistant-client/static/media/chevron_up.c17744bba2b4607e9b35.svg",
     "static/media/flat-color-icons_expand.svg": "/assistant-client/static/media/flat-color-icons_expand.64311c58d80109190abf.svg",
     "static/media/chevron_down.svg": "/assistant-client/static/media/chevron_down.9cff8a285e806f45d27a.svg",
-    "main.b0c97608.css.map": "/assistant-client/static/css/main.b0c97608.css.map",
-    "main.3b633068.js.map": "/assistant-client/static/js/main.3b633068.js.map"
+    "main.628f3b0e.css.map": "/assistant-client/static/css/main.628f3b0e.css.map",
+    "main.bea7b6d6.js.map": "/assistant-client/static/js/main.bea7b6d6.js.map"
   },
   "entrypoints": [
-    "static/css/main.b0c97608.css",
-    "static/js/main.3b633068.js"
+    "static/css/main.628f3b0e.css",
+    "static/js/main.bea7b6d6.js"
   ]
 }
